@@ -15,13 +15,13 @@ for (let y = 1; y <= height; y++)
     for (let x = 1; x <= length; x++)
     {
         if (x == playerPosX && y == playerPosY) {
-            getElementById(player);
+            document.getElementById(player);
         }
 
         else if (x == enemyPosX && y == enemyPosY) {
-            getElementById(enemy);
+            documnet.getElementById(enemy);
         }
-        else getElementById(space);
+        else document.getElementById(space);
     }
-    getElementById(newline);
+    document.getElementById(newline);
 }
