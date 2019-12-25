@@ -1,3 +1,5 @@
 
 *.config
 *.sqlite
+.vs/thewebpagegame/v16/.suo
+.vs/VSWorkspaceState.json
