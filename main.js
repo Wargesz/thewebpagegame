@@ -23,5 +23,5 @@ for (let y = 1; y <= height; y++)
         }
         else document.write(space);
     }
-    document.write(document.getElementById(newline).value);
+    document.write("<br>");
 }
