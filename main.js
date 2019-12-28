@@ -12,16 +12,16 @@ let space = '.';
 //
 document.addEventListener("keydown", function (event) {
     console.log(event);
-    if (event.key == "W" && playerPosX != 1) {
+    if (event.key == "w" && playerPosX != 1) {
         playerPosX--;
     }
-    if (event.key == "S" && playerPosX != height) {
+    if (event.key == "s" && playerPosX != height) {
         playerPoSX++;
     }
-    if (event.key == "A" && playerPosY != 1) {
+    if (event.key == "a" && playerPosY != 1) {
         playerPosY--;
     }
-    if (event.key == "D" && playerPosY != length) {
+    if (event.key == "d" && playerPosY != length) {
         playerPosY++;
     }
 });
