@@ -12,8 +12,17 @@ let space = '.';
 //
 document.addEventListener("keydown", function (event) {
     console.log(event);
-    if (event.key == "Enter") {
-        document.write("MEOW");
+    if (event.key == "W" && playerPosX != 1) {
+        playerPosX--;
+    }
+    if (event.key == "S" && playerPosX != height) {
+        playerPoSX++;
+    }
+    if (event.key == "A" && playerPosY != 1) {
+        playerPosY--;
+    }
+    if (event.key == "D" && playerPosY != length) {
+        playerPosY++;
     }
 });
 //
