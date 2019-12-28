@@ -10,6 +10,13 @@ let player = '0';
 let enemy = 'x';
 let space = '.';
 //
+document.addEventListener("keydown", function (event) {
+    console.log(event);
+    if (event.key == "Enter") {
+        map = ["MEOW"];
+    }
+});
+//
 for (let y = 1; y <= height; y++)
 {
     for (let x = 1; x <= length; x++)
