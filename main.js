@@ -9,11 +9,11 @@ let length = 8;
 let player = '0';
 let enemy = 'x';
 let space = '.';
-let gameIsFinished = false;
+let gameRunner = 1;
 //
     mapDraw();
 //
-while (gameIsFinished == false) {
+while (gameRunner != 5) {
     document.addEventListener("keydown", function (event) {
         mapDraw();
     });
@@ -33,7 +33,11 @@ while (gameIsFinished == false) {
             playerPosY++;
         }
     });
+    gameRunner++;
 }
+if (gameRunner == 5) {
+    gameRunner = 1;
+    }
 //
     function mapDraw() {
         for (let y = 1; y <= height; y++) {
