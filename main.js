@@ -14,10 +14,6 @@ let gameRunner = 1;
     mapDraw();
 //
     document.addEventListener("keydown", function (event) {
-        mapDraw();
-    });
-//
-    document.addEventListener("keydown", function (event) {
         console.log(event);
         if (event.key == "w" && playerPosY != 1) {
             playerPosX--;
@@ -31,6 +27,7 @@ let gameRunner = 1;
         if (event.key == "d" && playerPosX != length) {
             playerPosY++;
         }
+        mapDraw();
     });
 //
     function mapDraw() {
