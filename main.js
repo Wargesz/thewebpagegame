@@ -46,3 +46,6 @@ while (gamerunner != 2) {
     });
     gamerunner = 2;
 }
+if (gamerunner == 2){
+    gamerunner = 1;
+}
