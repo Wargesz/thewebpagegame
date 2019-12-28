@@ -13,7 +13,6 @@ let gameRunner = 1;
 //
     mapDraw();
 //
-while (gameRunner != 5) {
     document.addEventListener("keydown", function (event) {
         mapDraw();
     });
@@ -33,11 +32,6 @@ while (gameRunner != 5) {
             playerPosY++;
         }
     });
-    gameRunner++;
-}
-if (gameRunner == 5) {
-    gameRunner = 1;
-    }
 //
     function mapDraw() {
         for (let y = 1; y <= height; y++) {
