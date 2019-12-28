@@ -26,7 +26,7 @@ document.addEventListener("keydown", function (event) {
     }
 });
 //
-documnet.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", function (event) {
     for (let y = 1; y <= height; y++) {
         for (let x = 1; x <= length; x++) {
             if (x == playerPosX && y == playerPosY) {
