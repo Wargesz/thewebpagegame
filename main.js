@@ -9,6 +9,14 @@ let length = 8;
 let player = '0';
 let enemy = 'x';
 let space = '.';
+let gameIsFinished = false;
+//
+    mapDraw();
+//
+while (gameIsFinished != true) {
+    document.addEventListener("keydown", function (event) {
+        mapDraw();
+    });
 //
     document.addEventListener("keydown", function (event) {
         console.log(event);
@@ -25,23 +33,20 @@ let space = '.';
             playerPosY++;
         }
     });
-//
-function mapDraw() {
-    for (let y = 1; y <= height; y++) {
-        for (let x = 1; x <= length; x++) {
-            if (x == playerPosX && y == playerPosY) {
-                document.write(player);
-            }
-
-            else if (x == enemyPosX && y == enemyPosY) {
-                document.write(enemy);
-            }
-            else document.write(space);
-        }
-        document.write("<br>");
-    }
 }
 //
-    document.addEventListener("keydown", function (event) {
-        mapDraw();
-    });
+    function mapDraw() {
+        for (let y = 1; y <= height; y++) {
+            for (let x = 1; x <= length; x++) {
+                if (x == playerPosX && y == playerPosY) {
+                    document.write(player);
+                }
+
+                else if (x == enemyPosX && y == enemyPosY) {
+                    document.write(enemy);
+                }
+                else document.write(space);
+            }
+            document.write("<br>");
+        }
+    }
