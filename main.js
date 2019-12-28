@@ -11,8 +11,7 @@ let enemy = 'x';
 let space = '.';
 let gamerunner = 1;
 //
-gamerunner = 1;
-while (gamerunner != 2) {
+while (gamerunner == 1) {
     document.addEventListener("keydown", function (event) {
         console.log(event);
         if (event.key == "w" && playerPosY != 1) {
