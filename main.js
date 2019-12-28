@@ -26,7 +26,7 @@ for (let y = 1; y <= height; y++)
         }
 
         else if (x == enemyPosX && y == enemyPosY) {
-            documnet.write(enemy);
+            document.write(enemy);
         }
         else document.write(space);
     }
