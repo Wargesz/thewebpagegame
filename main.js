@@ -13,7 +13,7 @@ let gameIsFinished = false;
 //
     mapDraw();
 //
-while (gameIsFinished != true) {
+while (gameIsFinished == false) {
     document.addEventListener("keydown", function (event) {
         mapDraw();
     });
