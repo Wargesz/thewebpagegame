@@ -13,7 +13,7 @@ let space = '.';
 document.addEventListener("keydown", function (event) {
     console.log(event);
     if (event.key == "Enter") {
-        map = ["MEOW"];
+        document.write("MEOW");
     }
 });
 //
