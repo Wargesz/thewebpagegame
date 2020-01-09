@@ -44,14 +44,14 @@ let gameRunner = 1;
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
-                    document.write("<div>0</div>")
+                    document.write(player)
                 }
 
                 else if (x == enemyPosX && y == enemyPosY) {
-                    document.write("<div>x</div>")
+                    document.write(enemy)
                 }
-                else document.write("<div>.</div>")
+                else document.write(space)
             }
-            document.write("<div><br></div>")
+            document.write("<br>")
         }
     }
