@@ -18,6 +18,7 @@ let gameRunner = 1;
             move();
             timeout();
             mapDraw();
+            console.log("Update!");
         }, 1000);
     }
 //
