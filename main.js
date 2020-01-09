@@ -11,7 +11,8 @@ let enemy = 'x';
 let space = '.';
 let gameRunner = 1;
 //
-    mapDraw();
+mapDraw();
+timeout();
 //
     function timeout() {
         setTimeout(function () {
