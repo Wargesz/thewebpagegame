@@ -10,6 +10,7 @@ let player = '0';
 let enemy = 'x';
 let space = '.';
 let gameRunner = 1;
+let keyPressed = false;
 //
 gameLoop();
 //
@@ -21,19 +22,26 @@ gameLoop();
         }, 1000);
     }
 //
-    function move() {
+function move() {
+    keyPressed = false;
         document.addEventListener("keydown", function (event) {
-            if (event.key == "w" && playerPosY != 1) {
-                playerPosY--;
-            }
-            if (event.key == "s" && playerPosY != height) {
-                playerPosY++;
-            }
-            if (event.key == "a" && playerPosX != 1) {
-                playerPosX--;
-            }
-            if (event.key == "d" && playerPosX != length) {
-                playerPosX++;
+            if (keyPressed == false) {
+                if (event.key == "w" && playerPosY != 1) {
+                    playerPosY--;
+                    keyPressed = true;
+                }
+                if (event.key == "s" && playerPosY != height) {
+                    playerPosY++;
+                    keyPressed = true;
+                }
+                if (event.key == "a" && playerPosX != 1) {
+                    playerPosX--;
+                    keyPressed = true;
+                }
+                if (event.key == "d" && playerPosX != length) {
+                    playerPosX++;
+                    keyPressed = true;
+                }
             }
         });
     }
