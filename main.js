@@ -39,7 +39,7 @@ gameLoop();
     }
 //
 function mapDraw() {
-    window.location = "about:blank"
+    document.body.innerHTML = '';
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
