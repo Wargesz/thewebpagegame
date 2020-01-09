@@ -13,24 +13,31 @@ let gameRunner = 1;
 //
     mapDraw();
 //
-while (true) {
-    document.addEventListener("keydown", function (event) {
-        console.log(event);
-        if (event.key == "w" && playerPosY != 1) {
-            playerPosX--;
-        }
-        if (event.key == "s" && playerPosY != height) {
-            playerPosX++;
-        }
-        if (event.key == "a" && playerPosX != 1) {
-            playerPosY--;
-        }
-        if (event.key == "d" && playerPosX != length) {
-            playerPosY++;
-        }
-        mapDraw();
-    });
-   }
+    function timeout() {
+        setTimeout(function () {
+            move();
+            timeout();
+            mapDraw();
+        }, 1000);
+    }
+//
+    function move() {
+        document.addEventListener("keydown", function (event) {
+            console.log(event);
+            if (event.key == "w" && playerPosY != 1) {
+                playerPosX--;
+            }
+            if (event.key == "s" && playerPosY != height) {
+                playerPosX++;
+            }
+            if (event.key == "a" && playerPosX != 1) {
+                playerPosY--;
+            }
+            if (event.key == "d" && playerPosX != length) {
+                playerPosY++;
+            }
+        });
+    }
 //
     function mapDraw() {
         for (let y = 1; y <= height; y++) {
