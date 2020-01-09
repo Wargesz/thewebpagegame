@@ -10,6 +10,7 @@ let player = '0';
 let enemy = 'x';
 let space = '.';
 let gameRunner = 1;
+let newLine = "<br>";
 //
     mapDraw();
 //
@@ -52,6 +53,6 @@ let gameRunner = 1;
                 }
                 else document.write(space);
             }
-            document.write('<br>');
+            document.write(newLine);
         }
     }
