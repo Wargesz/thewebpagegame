@@ -52,6 +52,6 @@ let gameRunner = 1;
                 }
                 else document.write(space);
             }
-            document.write("<br>");
+            document.write('<br>');
         }
     }
