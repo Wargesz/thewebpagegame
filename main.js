@@ -18,7 +18,7 @@ timeout();
             mapDraw();
             move();
             timeout();
-        }, 1000);
+        }, 5000);
     }
 //
     function move() {
