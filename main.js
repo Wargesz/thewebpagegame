@@ -11,43 +11,40 @@ let enemy = 'x';
 let space = '.';
 let gameRunner = 1;
 //
-timeout();
+gameLoop();
 //
-    function timeout() {
+    function gameLoop() {
         setTimeout(function () {
             mapDraw();
             move();
-            timeout();
+            gameLoop();
         }, 5000);
     }
 //
     function move() {
         document.addEventListener("keydown", function (event) {
-            console.log(event);
             if (event.key == "w" && playerPosY != 1) {
-                playerPosX--;
-                break;
-            }
-            if (event.key == "s" && playerPosY != height) {
-                playerPosX++;
-            }
-            if (event.key == "a" && playerPosX != 1) {
                 playerPosY--;
             }
-            if (event.key == "d" && playerPosX != length) {
+            if (event.key == "s" && playerPosY != height) {
                 playerPosY++;
+            }
+            if (event.key == "a" && playerPosX != 1) {
+                playerPosX--;
+            }
+            if (event.key == "d" && playerPosX != length) {
+                playerPosX++;
             }
         });
     }
 //
 function mapDraw() {
-    document.clear();
+    window.location = "about:blank"
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
                     document.write(player)
                 }
-
                 else if (x == enemyPosX && y == enemyPosY) {
                     document.write(enemy)
                 }
