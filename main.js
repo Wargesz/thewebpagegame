@@ -18,7 +18,7 @@ gameLoop();
             mapDraw();
             move();
             gameLoop();
-        }, 5000);
+        }, 1000);
     }
 //
     function move() {
