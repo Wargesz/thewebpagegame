@@ -26,6 +26,7 @@ timeout();
             console.log(event);
             if (event.key == "w" && playerPosY != 1) {
                 playerPosX--;
+                break;
             }
             if (event.key == "s" && playerPosY != height) {
                 playerPosX++;
