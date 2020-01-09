@@ -11,15 +11,13 @@ let enemy = 'x';
 let space = '.';
 let gameRunner = 1;
 //
-mapDraw();
 timeout();
 //
     function timeout() {
         setTimeout(function () {
+            mapDraw();
             move();
             timeout();
-            mapDraw();
-            console.log("Update!");
         }, 1000);
     }
 //
@@ -41,7 +39,8 @@ timeout();
         });
     }
 //
-    function mapDraw() {
+function mapDraw() {
+    document.clear();
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
