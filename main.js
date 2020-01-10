@@ -28,6 +28,7 @@ function enemyMove() {
     if (keyPressed == true) {
         enemyMovementNumber = Math.floor(Math.random() * 2);
         keyPressed = false;
+        console.log(enemyMovementNumber);
     }
     if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
         enemyPosX--;
