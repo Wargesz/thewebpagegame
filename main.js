@@ -68,7 +68,8 @@ function move() {
 //
 function mapDraw() {
     document.body.innerHTML = '';
-    document.write("y: " + playerPosY +" , x: " + playerPosX + "<br>");
+    document.write("player y: " + playerPosY + " , x: " + playerPosX + "<br>");
+    document.write("enemy y: " + enemyPosY + " , x: " + enemyPosX + "<br>");
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
