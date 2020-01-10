@@ -51,13 +51,13 @@ function mapDraw() {
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
-                    document.body.innerHTML = 'player';
+                    document.write(player);
                 }
                 else if (x == enemyPosX && y == enemyPosY) {
-                    document.body.innerHTML = 'enemy';
+                    document.write(enemy);
                 }
-                else document.body.innerHTML = 'space';
+                else document.write(space);
             }
-            document.body.innerHTML = '<br>';
+            document.write("<br>");
         }
     }
