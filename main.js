@@ -11,6 +11,8 @@ let enemy = 'x';
 let space = '_';
 let gameRunner = 1;
 let keyPressed = false;
+let enemyHealth = 10;
+let enemyMovementNumber;
 //
 gameLoop();
 //
@@ -19,10 +21,16 @@ gameLoop();
             mapDraw();
             move();
             gameLoop();
-        }, 10);
+        }, 50);
+    }
+//
+function fight() {
+        
     }
 //
 function move() {
+    enemyMovementNumber = Math.floor(Math.random() * 1);
+    console.log(enemyMovementNumber);
     keyPressed = false;
         document.addEventListener("keydown", function (event) {
             if (keyPressed == false) {
