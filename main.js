@@ -94,12 +94,12 @@ function mapDraw() {
     document.write("enemy y: " + enemyPosY + " , x: " + enemyPosX + "<br>");
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
-                if (x == playerPosX && y == playerPosY) {
-                    document.write(player);
+                if (x == enemyPosX && y == enemyPosY) {
+                    document.write(enemy);
                     document.write(' ');
                 }
-                else if (x == enemyPosX && y == enemyPosY) {
-                    document.write(enemy);
+                else if (x == playerPosX && y == player) {
+                    document.write(player);
                     document.write(' ');
                 }
                 else document.write(space);
