@@ -25,11 +25,10 @@ gameLoop();
     }
 //
 function enemyMove() {
-    if (keyPressed == true) {
-        enemyMovementNumber = Math.floor(Math.random() * 2);
-        keyPressed = false;
-        console.log(enemyMovementNumber);
-    }
+
+    enemyMovementNumber = Math.floor(Math.random() * 2);
+    console.log(enemyMovementNumber);
+
     if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
         enemyPosX--;
     }
@@ -44,7 +43,8 @@ function enemyMove() {
     }
 }
 //
-function move() {
+    function move() {
+        keyPressed = false;
         document.addEventListener("keydown", function (event) {
             if (keyPressed == false) {
                 if (event.key == "w" && playerPosY != 1) {
