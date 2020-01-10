@@ -29,7 +29,7 @@ function fight() {
     }
 //
 function move() {
-    enemyMovementNumber = Math.floor(Math.random() * 1);
+    enemyMovementNumber = Math.floor(Math.random() * 2);
     console.log(enemyMovementNumber);
     keyPressed = false;
         document.addEventListener("keydown", function (event) {
