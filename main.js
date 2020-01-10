@@ -25,11 +25,11 @@ gameLoop();
                 enemyMove();
                 gameLoop();
             }
-        }, 1000);
+        }, 10);
     }
 //
 function enemyMove() {
-    //if (playerHasMoved == true) {
+    if (playerHasMoved == true) {
 
         enemyMovementNumber = Math.floor(Math.random() * 2);
         console.log(enemyMovementNumber);
@@ -53,7 +53,7 @@ function enemyMove() {
             enemyPosY--;
         }
         playerHasMoved = false;
-   // }
+    }
 }
 //
 function move() {
