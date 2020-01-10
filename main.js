@@ -14,15 +14,18 @@ let keyPressed = false;
 let enemyHealth = 10;
 let enemyMovementNumber = null;
 let playerHasMoved = false;
+let gameRunner = true;
 //
 gameLoop();
 //
     function gameLoop() {
         setTimeout(function () {
-            mapDraw();
-            move();
-            enemyMove();
-            gameLoop();
+            if (gameRunner == true) {
+                mapDraw();
+                move();
+                enemyMove();
+                gameLoop();
+            }
         }, 10);
     }
 //
@@ -57,7 +60,7 @@ function enemyMove() {
 function move() {
     if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
         document.write("GAME OVER");
-        return 0;
+        gameRunner = false;
     }
         keyPressed = false;
         document.addEventListener("keydown", function (event) {
