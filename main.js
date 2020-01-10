@@ -8,7 +8,7 @@ let height = 8;
 let length = 8;
 let player = '0';
 let enemy = 'x';
-let space = '•';
+let space = '_';
 let gameRunner = 1;
 let keyPressed = false;
 //
