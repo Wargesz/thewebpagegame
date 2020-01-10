@@ -2,10 +2,10 @@ console.log("Ready");
 
 let playerPosX = 1;
 let playerPosY = 1;
-let enemyPosX = 2;
-let enemyPosY = 2;
-let height = 2;
-let length = 2;
+let enemyPosX = 20;
+let enemyPosY = 20;
+let height = 20;
+let length = 20;
 let player = '0';
 let enemy = 'x';
 let space = '_';
