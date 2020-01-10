@@ -23,7 +23,7 @@ gameLoop();
             move();
             enemyMove();
             gameLoop();
-        }, 50);
+        }, 10);
     }
 //
 function enemyMove() {
