@@ -12,7 +12,8 @@ let space = '_';
 let gameRunner = 1;
 let keyPressed = false;
 let enemyHealth = 10;
-let enemyMovementNumber;
+let enemyMovementNumber = null;
+let playerHasMoved = false;
 //
 gameLoop();
 //
@@ -25,21 +26,23 @@ gameLoop();
     }
 //
 function enemyMove() {
+    if (playerHasMoved == true) {
 
-    enemyMovementNumber = Math.floor(Math.random() * 2);
-    console.log(enemyMovementNumber);
+        enemyMovementNumber = Math.floor(Math.random() * 2);
+        console.log(enemyMovementNumber);
 
-    if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
-        enemyPosX--;
-    }
-    if (enemyMovementNumber == 0 && enemyPosX < playerPosX) {
-        enemyPosX++;
-    }
-    if (enemyMovementNumber == 1 && enemyPosY < playerPosY) {
-        enemyPosY++;
-    }
-    if (enemyMovementNumber == 1 && enemyPosY > playerPosY) {
-        enemyPosY--;
+        if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
+            enemyPosX--;
+        }
+        if (enemyMovementNumber == 0 && enemyPosX < playerPosX) {
+            enemyPosX++;
+        }
+        if (enemyMovementNumber == 1 && enemyPosY < playerPosY) {
+            enemyPosY++;
+        }
+        if (enemyMovementNumber == 1 && enemyPosY > playerPosY) {
+            enemyPosY--;
+        }
     }
 }
 //
@@ -50,18 +53,22 @@ function enemyMove() {
                 if (event.key == "w" && playerPosY != 1) {
                     playerPosY--;
                     keyPressed = true;
+                    playerHasMoved = true;
                 }
                 if (event.key == "s" && playerPosY != height) {
                     playerPosY++;
                     keyPressed = true;
+                    playerHasMoved = true;
                 }
                 if (event.key == "a" && playerPosX != 1) {
                     playerPosX--;
                     keyPressed = true;
+                    playerHasMoved = true;
                 }
                 if (event.key == "d" && playerPosX != length) {
                     playerPosX++;
                     keyPressed = true;
+                    playerHasMoved = true;
                 }
             }
         });
