@@ -25,7 +25,7 @@ gameLoop();
                 enemyMove();
                 gameLoop();
             }
-        }, 50);
+        }, 1000);
     }
 //
 function enemyMove() {
