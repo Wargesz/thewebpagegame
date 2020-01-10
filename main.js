@@ -32,6 +32,12 @@ function enemyMove() {
         enemyMovementNumber = Math.floor(Math.random() * 2);
         console.log(enemyMovementNumber);
 
+        if (enemyPosX == playerPosX) {
+            enemyMovementNumber = 1;
+        }
+        if (enemyPosY == playerPosY) {
+            enemyMovementNumber = 0;
+        }
         if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
             enemyPosX--;
         }
