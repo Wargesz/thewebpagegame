@@ -54,7 +54,11 @@ function enemyMove() {
     }
 }
 //
-    function move() {
+function move() {
+    if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
+        document.write("GAME OVER");
+        break;
+    }
         keyPressed = false;
         document.addEventListener("keydown", function (event) {
             if (keyPressed == false) {
