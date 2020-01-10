@@ -44,6 +44,7 @@ function enemyMove() {
         if (enemyMovementNumber == 1 && enemyPosY > playerPosY) {
             enemyPosY--;
         }
+        playerHasMoved = false;
     }
 }
 //
