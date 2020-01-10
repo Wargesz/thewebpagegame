@@ -21,7 +21,7 @@ gameLoop();
         setTimeout(function () {
             if (gameRunner == true) {
                 mapDraw();
-                move();
+                playerMove();
                 enemyMove();
                 gameLoop();
             }
@@ -55,7 +55,7 @@ function enemyMove() {
     }
 }
 //
-function move() {
+function playerMove() {
     if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
         document.write("GAME OVER");
         gameRunner = false;
