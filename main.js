@@ -20,6 +20,7 @@ gameLoop();
         setTimeout(function () {
             mapDraw();
             move();
+            enemyMove();
         }, 50);
     }
 //
@@ -41,7 +42,6 @@ function enemyMove() {
 function move() {
     if (keyPressed == true) {
         enemyMovementNumber = Math.floor(Math.random() * 2);
-        enemyMove();
     }
     keyPressed = false;
         document.addEventListener("keydown", function (event) {
