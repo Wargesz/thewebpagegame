@@ -57,7 +57,7 @@ function enemyMove() {
 function move() {
     if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
         document.write("GAME OVER");
-        break;
+        return 0;
     }
         keyPressed = false;
         document.addEventListener("keydown", function (event) {
