@@ -52,11 +52,14 @@ function mapDraw() {
             for (let x = 1; x <= length; x++) {
                 if (x == playerPosX && y == playerPosY) {
                     document.write(player);
+                    document.write(' ');
                 }
                 else if (x == enemyPosX && y == enemyPosY) {
                     document.write(enemy);
+                    document.write(' ');
                 }
                 else document.write(space);
+                document.write(' ');
             }
             document.write("<br>");
         }
