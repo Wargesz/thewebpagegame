@@ -20,17 +20,29 @@ gameLoop();
         setTimeout(function () {
             mapDraw();
             move();
-            gameLoop();
         }, 50);
     }
 //
-function fight() {
-        
+function enemyMove() {
+    if (enemyMovementNumber == 0 && enemyPosX > playerPosX) {
+        enemyPosX--;
     }
+    if (enemyMovementNumber == 0 && enemyPosX < playerPosX) {
+        enemyPosX++;
+    }
+    if (enemyMovementNumber == 1 && enemyPosY < playerPosY) {
+        enemyPosY++;
+    }
+    if (enemyMovementNumber == 1 && enemyPosY > playerPosY) {
+        enemyPosY--;
+    }
+}
 //
 function move() {
-    enemyMovementNumber = Math.floor(Math.random() * 2);
-    console.log(enemyMovementNumber);
+    if (keyPressed == true) {
+        enemyMovementNumber = Math.floor(Math.random() * 2);
+        enemyMove();
+    }
     keyPressed = false;
         document.addEventListener("keydown", function (event) {
             if (keyPressed == false) {
