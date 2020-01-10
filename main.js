@@ -98,7 +98,7 @@ function mapDraw() {
                     document.write(enemy);
                     document.write(' ');
                 }
-                else if (x == playerPosX && y == player) {
+                else if (x == playerPosX && y == playerPosY) {
                     document.write(player);
                     document.write(' ');
                 }
