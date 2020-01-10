@@ -2,8 +2,8 @@ console.log("Ready");
 
 let playerPosX = 1;
 let playerPosY = 1;
-let enemyPosX = 5;
-let enemyPosY = 7;
+let enemyPosX = 2;
+let enemyPosY = 2;
 let height = 2;
 let length = 2;
 let player = '0';
