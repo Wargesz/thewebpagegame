@@ -22,6 +22,7 @@ gameLoop();
             mapDraw();
             move();
             enemyMove();
+            gameLoop();
         }, 50);
     }
 //
