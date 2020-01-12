@@ -145,7 +145,6 @@ function mapDraw() {
             }
             document.write("<br>");
     }
-    object.onclick = playerDown();
 }
 //
 function coinGenerator() {
