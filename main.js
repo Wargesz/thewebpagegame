@@ -104,13 +104,13 @@ function playerMove() {
                 if (event.key == "w" || event.key == "ArrowUp") {
                     playerUp();
                 }
-                if (event.key == "s") {
+                if (event.key == "s" || event.key == "ArrowDown") {
                     playerDown();
                 }
-                if (event.key == "a") {
+                if (event.key == "a" || event.key == "ArrowLeft") {
                     playerLeft();
                 }
-                if (event.key == "d") {
+                if (event.key == "d" || event.key == "ArrowRight") {
                     playerRight();
                 }
             }
