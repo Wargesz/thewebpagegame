@@ -21,7 +21,7 @@ let coinOnGround = false;
 //
 gameLoop();
 //
-    function gameLoop() {
+function gameLoop() {
         setTimeout(function () {
             if (gameRunner == true) {
                 coinGenerator();
@@ -59,6 +59,35 @@ function enemyMove() {
     }
 }
 //
+function playerUp() {
+        if (playerPosY != 1) {
+            playerPosY--;
+            keyPressed = true;
+            playerHasMoved = true;
+        }
+}
+function playerDown() {
+    if (playerPosY != height) {
+        playerPosY++;
+        keyPressed = true;
+        playerHasMoved = true;
+    }
+}
+function playerLeft() {
+    if (playerPosX != 1) {
+        playerPosX--;
+        keyPressed = true;
+        playerHasMoved = true;
+    }
+}
+function playerRight() {
+    if (playerPosX != length) {
+        playerPosX++;
+        keyPressed = true;
+        playerHasMoved = true;
+    }
+}
+//
 function playerMove() {
         if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
             document.write("GAME OVER");
@@ -72,25 +101,17 @@ function playerMove() {
         document.addEventListener("keydown", function (event) {
         console.log(event);
             if (keyPressed == false) {
-                if (event.key == "w" && playerPosY != 1) {
-                    playerPosY--;
-                    keyPressed = true;
-                    playerHasMoved = true;
+                if (event.key == "w") {
+                    playerUp();
                 }
-                if (event.key == "s" && playerPosY != height) {
-                    playerPosY++;
-                    keyPressed = true;
-                    playerHasMoved = true;
+                if (event.key == "s") {
+                    playerDown();
                 }
-                if (event.key == "a" && playerPosX != 1) {
-                    playerPosX--;
-                    keyPressed = true;
-                    playerHasMoved = true;
+                if (event.key == "a") {
+                    playerLeft();
                 }
-                if (event.key == "d" && playerPosX != length) {
-                    playerPosX++;
-                    keyPressed = true;
-                    playerHasMoved = true;
+                if (event.key == "d") {
+                    playerRight();
                 }
             }
         });
@@ -123,7 +144,8 @@ function mapDraw() {
                 document.write(' ');
             }
             document.write("<br>");
-        }
+    }
+    object.onclick = playerDown();
 }
 //
 function coinGenerator() {
