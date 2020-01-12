@@ -101,7 +101,7 @@ function playerMove() {
         document.addEventListener("keydown", function (event) {
         console.log(event);
             if (keyPressed == false) {
-                if (event.key == "w") {
+                if (event.key == "w" || event.key == "ArrowUp") {
                     playerUp();
                 }
                 if (event.key == "s") {
