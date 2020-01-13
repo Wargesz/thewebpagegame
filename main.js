@@ -5,8 +5,7 @@ let playerPosY = 1;
 let coinPosX = 0;
 let coinPosY = 0;
 let height = 20;
-let length = 20;
-let highScore = 4; 
+let length = 20; 
 let enemyPosX = height;
 let enemyPosY = length;
 let player = '0';
@@ -119,14 +118,10 @@ function playerMove() {
     }
 //
 function mapDraw() {
-        if (collectedCoins > highScore) {
-        highScore = coins;
-        }
     document.body.innerHTML = '';
     document.write("player: 0<br>");
     document.write("enemy: x<br>");
     document.write("coin: $<br>");
-    document.write("highscore: " + highScore +"<br>")
     document.write("player x: " + playerPosX + ", y: " + playerPosY + "<br>");
     document.write("enemy x: " + enemyPosX + ", y: " + enemyPosY + "<br>");
     document.write("coin x: " + coinPosX + ", y: " + coinPosY + "<br>");
