@@ -6,8 +6,8 @@ let enemyPosX = 20;
 let enemyPosY = 20;
 let coinPosX = 0;
 let coinPosY = 0;
-let height = 20;
-let length = 20;
+let height = 8;
+let length = 8;
 let player = '0';
 let enemy = 'x';
 let space = '_';
@@ -149,8 +149,8 @@ function mapDraw() {
 //
 function coinGenerator() {
     if (coinOnGround == false) {
-        coinPosX = Math.floor(Math.random() * 20) + 1
-        coinPosY = Math.floor(Math.random() * 20) + 1;
+        coinPosX = Math.floor(Math.random() * height) + 1
+        coinPosY = Math.floor(Math.random() * length) + 1;
 
         if (coinPosX == playerPosX && coinPosY == playerPosY) {
             coinGenerator();
