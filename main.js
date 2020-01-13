@@ -130,7 +130,7 @@ function mapDraw() {
     document.write("coin x: " + coinPosX + ", y: " + coinPosY + "<br>");
     document.write("-----<br>");
     document.write("coins: " + collectedCoins + "<br>");
-    document.write("heighscore: " + highscore + "<br>");
+    document.write("highscore: " + highscore + "<br>");
     document.write("-----<br>");
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
