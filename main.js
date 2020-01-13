@@ -8,7 +8,7 @@ let height = 20;
 let length = 20; 
 let enemyPosX = height;
 let enemyPosY = length;
-let heighscore = 46;
+let highscore = 46;
 let player = '0';
 let enemy = 'x';
 let space = '_';
@@ -37,7 +37,6 @@ function gameLoop() {
 function enemyMove() {
     if (playerHasMoved == true) {
         enemyMovementNumber = Math.floor(Math.random() * 2);
-        console.log(enemyMovementNumber);
         if (enemyPosX == playerPosX) {
             enemyMovementNumber = 1;
         }
@@ -100,7 +99,6 @@ function playerMove() {
     }
         keyPressed = false;
         document.addEventListener("keydown", function (event) {
-        console.log(event);
             if (keyPressed == false) {
                 if (event.key == "w" || event.key == "ArrowUp") {
                     playerUp();
@@ -119,8 +117,8 @@ function playerMove() {
     }
 //
 function mapDraw() {
-    if (collectedCoins > heighscore) {
-        heighscore = collectedCoins;
+    if (collectedCoins > highscore) {
+        highscore = collectedCoins;
     }
     document.body.innerHTML = '';
     document.write("player: 0<br>");
@@ -132,7 +130,7 @@ function mapDraw() {
     document.write("coin x: " + coinPosX + ", y: " + coinPosY + "<br>");
     document.write("-----<br>");
     document.write("coins: " + collectedCoins + "<br>");
-    document.write("heighscore: " + heighscore + "<br>");
+    document.write("heighscore: " + highscore + "<br>");
     document.write("-----<br>");
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
