@@ -1,5 +1,5 @@
 console.log("Ready");
-
+//
 let playerPosX = 1;
 let playerPosY = 1;
 let coinPosX = 0;
@@ -8,6 +8,7 @@ let height = 20;
 let length = 20; 
 let enemyPosX = height;
 let enemyPosY = length;
+let heighscore = 46;
 let player = '0';
 let enemy = 'x';
 let space = '_';
@@ -118,14 +119,21 @@ function playerMove() {
     }
 //
 function mapDraw() {
+    if (collectedCoins > heighscore) {
+        heighscore = collectedCoins;
+    }
     document.body.innerHTML = '';
     document.write("player: 0<br>");
     document.write("enemy: x<br>");
     document.write("coin: $<br>");
+    document.write("-----<br>");
     document.write("player x: " + playerPosX + ", y: " + playerPosY + "<br>");
     document.write("enemy x: " + enemyPosX + ", y: " + enemyPosY + "<br>");
     document.write("coin x: " + coinPosX + ", y: " + coinPosY + "<br>");
-    document.write("coins: "+ collectedCoins + "<br>");
+    document.write("-----<br>");
+    document.write("coins: " + collectedCoins + "<br>");
+    document.write("heighscore: " + heighscore + "<br>");
+    document.write("-----<br>");
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == coinPosX && y == coinPosY) {
