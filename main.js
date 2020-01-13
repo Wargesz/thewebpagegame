@@ -2,8 +2,8 @@ console.log("Ready");
 
 let playerPosX = 1;
 let playerPosY = 1;
-let enemyPosX = 20;
-let enemyPosY = 20;
+let enemyPosX = height;
+let enemyPosY = length;
 let coinPosX = 0;
 let coinPosY = 0;
 let height = 8;
