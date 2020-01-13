@@ -120,7 +120,7 @@ function playerMove() {
 //
 function mapDraw() {
         if (collectedCoins >= highScore) {
-        highscore = coins;
+        highScore = coins;
         }
     document.body.innerHTML = '';
     document.write("player: 0<br>");
