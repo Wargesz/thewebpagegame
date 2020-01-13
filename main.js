@@ -119,7 +119,7 @@ function playerMove() {
     }
 //
 function mapDraw() {
-        if (coins >=  highScore) {
+        if (collectedCoins >= highScore) {
         highscore = coins;
         }
     document.body.innerHTML = '';
