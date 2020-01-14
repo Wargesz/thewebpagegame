@@ -8,7 +8,7 @@ let height = 20;
 let length = 20; 
 let enemyPosX = height;
 let enemyPosY = length;
-let highscore = 59;
+let highscore = 66;
 let player = '0';
 let enemy = 'x';
 let space = '_';
@@ -59,35 +59,35 @@ function enemyMove() {
     }
 }
 //
-function playerUp() {
+ function playerUp() {
         if (playerPosY != 1) {
             playerPosY--;
             keyPressed = true;
             playerHasMoved = true;
         }
-}
-function playerDown() {
-    if (playerPosY != height) {
-        playerPosY++;
-        keyPressed = true;
-        playerHasMoved = true;
     }
-}
-function playerLeft() {
-    if (playerPosX != 1) {
-        playerPosX--;
-        keyPressed = true;
-        playerHasMoved = true;
+ function playerDown() {
+        if (playerPosY != height) {
+            playerPosY++;
+            keyPressed = true;
+            playerHasMoved = true;
+        }
     }
-}
-function playerRight() {
-    if (playerPosX != length) {
-        playerPosX++;
-        keyPressed = true;
-        playerHasMoved = true;
+ function playerLeft() {
+        if (playerPosX != 1) {
+            playerPosX--;
+            keyPressed = true;
+            playerHasMoved = true;
+        }
     }
-}
-//
+ function playerRight() {
+        if (playerPosX != length) {
+            playerPosX++;
+            keyPressed = true;
+            playerHasMoved = true;
+        }
+    }
+    //   
 function playerMove() {
         if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
             document.write("GAME OVER");
@@ -132,6 +132,7 @@ function mapDraw() {
     document.write("coins: " + collectedCoins + "<br>");
     document.write("highscore: " + highscore + "<br>");
     document.write("-----<br>");
+    */
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == coinPosX && y == coinPosY) {
