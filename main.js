@@ -132,7 +132,6 @@ function mapDraw() {
     document.write("coins: " + collectedCoins + "<br>");
     document.write("highscore: " + highscore + "<br>");
     document.write("-----<br>");
-    */
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == coinPosX && y == coinPosY) {
