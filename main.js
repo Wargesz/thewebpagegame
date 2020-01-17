@@ -17,7 +17,7 @@ function mainLoop() {
 function gameChanger() {
     document.body.innerHTML = '';
     document.write("Choose which game to play:<br>");
-    document.write("(A/D)<br>");
+    document.write("(A/D), (Enter)<br>");
     document.write("x----------x<br>");
     if (gameChooser == 1) {
         document.write(" (CoinCollector)    <strike>BitGuest</strike>");
@@ -30,10 +30,10 @@ function gameChanger() {
         document.write("<br><br>IN DEVELOPMENT...<br>");
     }
     document.addEventListener("keydown", function (event) {
-        if (event.key == "d" && gameChooser != 2) {
+        if (event.key == "d" && gameChooser != 2 || event.key == "ArrowRight" && gameChooser != 2) {
             gameChooser++;
         }
-        if (event.key == "a" && gameChooser != 1) {
+        if (event.key == "a" && gameChooser != 1 || event.key == "ArrowLeft" && gameChooser != 1) {
             gameChooser--;
         }
     }); 
