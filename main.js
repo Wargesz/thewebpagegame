@@ -15,7 +15,7 @@ function mainLoop() {
     }
 }
 function gameChanger() {
-    document.body.innerHTML = '';
+    document.body.innerHTML = ' ';
     document.write("Choose which game to play:<br>");
     document.write("(A/D), (Enter)<br>");
     document.write("x----------x<br>");
