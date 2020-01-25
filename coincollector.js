@@ -1,25 +1,5 @@
 console.log("coinCollector: Ready");
 //
-    let playerPosX = 1;
-    let playerPosY = 1;
-    let coinPosX = 0;
-    let coinPosY = 0;
-    let height = 20;
-    let length = 20;
-    let enemyPosX = height;
-    let enemyPosY = length;
-    let highscore = 66;
-    let player = '0';
-    let enemy = 'x';
-    let space = '_';
-    let coin = '$';
-    let collectedCoins = 0;
-    let keyPressed = false;
-    let enemyMovementNumber = null;
-    let playerHasMoved = false;
-    let gameRunner = true;
-    let coinOnGround = false;
-//
 function coinCollectorSetup() {
     playerPosX = 1;
     playerPosY = 1;
@@ -38,15 +18,18 @@ function coinCollectorSetup() {
     keyPressed = false;
     enemyMovementNumber = null;
     playerHasMoved = false;
+    inGame = true;
     gameRunner = true;
     coinOnGround = false;
+    //
     coinCollectorGameLoop();
+    
 }
 function coinCollectorGameLoop() {
         setTimeout(function () {
             if (gameRunner == true && inGame == true) {
                 coinGenerator();
-                mapDraw();
+                coinCollectorMapDraw();
                 playerMove();
                 enemyMove();
                 coinCollectorGameLoop();
@@ -56,7 +39,7 @@ function coinCollectorGameLoop() {
 function gameEndLoop() {
     setTimeout(function () {
         if (gameRunner == false && inGame == true) {
-            mapDraw();
+            coinCollectorMapDraw();
             document.write("GAME OVER<br>");
             document.write("hit space to restart<br>");
             document.write("hit esc to quit");
@@ -66,6 +49,7 @@ function gameEndLoop() {
             }
             if (event.key == "Escape") {
                 inGame = false;
+                gameChooser = "left";
                 mainLoop();
             }
         });
@@ -99,28 +83,28 @@ function enemyMove() {
     }
 }
 //
- function playerUp() {
+ function coinCollectorPlayerUp() {
         if (playerPosY != 1) {
             playerPosY--;
             keyPressed = true;
             playerHasMoved = true;
         }
     }
- function playerDown() {
+ function coinCollectorPlayerDown() {
         if (playerPosY != height) {
             playerPosY++;
             keyPressed = true;
             playerHasMoved = true;
         }
     }
- function playerLeft() {
+ function coinCollectorPlayerLeft() {
         if (playerPosX != 1) {
             playerPosX--;
             keyPressed = true;
             playerHasMoved = true;
         }
     }
- function playerRight() {
+ function coinCollectorPlayerRight() {
         if (playerPosX != length) {
             playerPosX++;
             keyPressed = true;
@@ -143,26 +127,26 @@ function playerMove() {
     document.addEventListener("keydown", function (event) {
             if (keyPressed == false) {
                 if (event.key == "w" || event.key == "ArrowUp") {
-                    playerUp();
+                    coinCollectorPlayerUp();
                 }
                 if (event.key == "s" || event.key == "ArrowDown") {
-                    playerDown();
+                    coinCollectorPlayerDown();
                 }
                 if (event.key == "a" || event.key == "ArrowLeft") {
-                    playerLeft();
+                    coinCollectorPlayerLeft();
                 }
                 if (event.key == "d" || event.key == "ArrowRight") {
-                    playerRight();
+                    coinCollectorPlayerRight();
                 }
             }
         });
     }
 //
-function mapDraw() {
+function coinCollectorMapDraw() {
     if (collectedCoins > highscore) {
         highscore = collectedCoins;
     }
-    document.body.innerHTML = '';
+    document.body.innerHTML = ' ';
     document.write("player: 0<br>");
     document.write("enemy: x<br>");
     document.write("coin: $<br>");
@@ -185,8 +169,8 @@ function mapDraw() {
                     document.write(' ');
                 }
                 else if (x == playerPosX && y == playerPosY) {
-                    document.write(player);
-                    document.write(' ');
+                     document.write(player);
+                     document.write(' ');
                 }
                 else document.write(space);
                 document.write(' ');
