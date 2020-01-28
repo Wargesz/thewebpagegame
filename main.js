@@ -90,6 +90,7 @@ function mainLoop() {
 }
 function gameChanger() {
     document.body.innerHTML = ' ';
+    document.write("F5 is your friend. Use it often<br>");
     document.write("Choose which game to play:<br>");
     document.write("(A/D), (Enter)<br>");
     document.write("x----------x<br>");

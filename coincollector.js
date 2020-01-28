@@ -25,6 +25,7 @@ function coinCollectorSetup() {
     coinCollectorGameLoop();
     
 }
+//
 function coinCollectorGameLoop() {
         setTimeout(function () {
             if (gameRunner == true && inGame == true) {
@@ -36,6 +37,7 @@ function coinCollectorGameLoop() {
             }
         }, 10);
 }
+//
 function gameEndLoop() {
     setTimeout(function () {
         if (gameRunner == false && inGame == true) {

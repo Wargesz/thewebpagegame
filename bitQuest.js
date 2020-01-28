@@ -26,7 +26,6 @@ function bitQuestGameLoop() {
             bitQuestGameLoop();
         }
     }, 10);
-   
 }
 //
 function bitQuestMapChanger() {
