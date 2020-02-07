@@ -19,7 +19,7 @@ let enemy = 'x';
 let space = '_';
 let coin = '$';
 let wall = '#';
-let gate = 'O';
+let gate = 'o';
 let collectedCoins = 0;
 let keyPressed = false;
 let enemyMovementNumber = null;
@@ -74,7 +74,7 @@ let playerLocator = 0;
 let playerPosNumber = 0;
 let playerNextMoveNumber = 0;
 let gatePosX = 0;
-let gaetPosy = 0;
+let gatePosY = 0;
 let currentMap = [];
 //
 mainLoop();

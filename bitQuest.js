@@ -94,18 +94,21 @@ function bitQuestPlayerUp() {
         playerHasMoved = true;
     }
 }
+//
 function bitQuestPlayerDown() {
     for (y; y == 1; y++) {
         playerPosY++;
         playerHasMoved = true;
     }
 }
+//
 function bitQuestPlayerLeft() {
     for (y; y == 1; y++) {
         playerPosX--;
         playerHasMoved = true;
     }
 }
+//
 function bitQuestPlayerRight() {
     for (y; y == 1; y++) {
         playerPosX++;
