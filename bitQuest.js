@@ -13,13 +13,14 @@ function bitQuestSetup() {
     gatePosY = 17;
     gatePosX = 20;
     playerHasMoved = true;
+    currentGame = "bitQuest";
     //
     bitQuestGameLoop();
 }
 //
 function bitQuestGameLoop() {
     setTimeout(function () {
-        if (gameRunner == true && inGame == true) {
+        if (gameRunner == true && inGame == true && currentGame == "bitQuest") {
             bitQuestMapChanger();
             bitQuestMapDraw();
             bitQuestPlayerMove();
@@ -151,7 +152,8 @@ function bitQuestPlayerMove() {
             if (event.key == "Escape") {
                 inGame = false;
                 gameRunner = false;
-                gameChooser = "right"
+                currentGame = "none";
+                gameChooser = "right";
                 mainLoop();
             }
         });

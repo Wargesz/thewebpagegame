@@ -2,6 +2,8 @@ console.log("main: Ready");
 // main.js variables
 let gameChooser = "left";
 let inGame = false;
+let currentGame = "none";
+let gameRunner = true;
 // variables
 let x = 1;
 let y = 1;
@@ -24,7 +26,6 @@ let collectedCoins = 0;
 let keyPressed = false;
 let enemyMovementNumber = null;
 let playerHasMoved = false;
-let gameRunner = true;
 let coinOnGround = false;
 let coinCollectorMap = [];
 let map11= [        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -80,7 +81,7 @@ let currentMap = [];
 mainLoop();
 //
 function mainLoop() {
-    if (inGame == false) {
+    if (inGame == false && currentGame == "none") {
         setTimeout(function () {
             gameChanger();
             gameStarter();

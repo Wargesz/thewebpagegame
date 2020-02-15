@@ -20,6 +20,7 @@ function coinCollectorSetup() {
     playerHasMoved = false;
     inGame = true;
     gameRunner = true;
+    currentGame = "coinCollector";
     coinOnGround = false;
     //
     coinCollectorGameLoop();
@@ -28,7 +29,7 @@ function coinCollectorSetup() {
 //
 function coinCollectorGameLoop() {
         setTimeout(function () {
-            if (gameRunner == true && inGame == true) {
+            if (gameRunner == true && inGame == true && currentGame == "coinCollector") {
                 coinGenerator();
                 coinCollectorMapDraw();
                 playerMove();
@@ -40,7 +41,7 @@ function coinCollectorGameLoop() {
 //
 function gameEndLoop() {
     setTimeout(function () {
-        if (gameRunner == false && inGame == true) {
+        if (gameRunner == false && inGame == true && currentGame == "coinCollector") {
             coinCollectorMapDraw();
             document.write("GAME OVER<br>");
             document.write("hit space to restart<br>");
@@ -52,6 +53,7 @@ function gameEndLoop() {
             if (event.key == "Escape") {
                 inGame = false;
                 gameChooser = "left";
+                currentGame = "none";
                 mainLoop();
             }
         });
