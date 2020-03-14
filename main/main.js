@@ -1,5 +1,6 @@
 console.log("main: Ready");
 // main.js variables
+let gameChooser = "left";
 let inGame = false;
 let currentGame = "none";
 let gameRunner = true;
@@ -70,4 +71,3 @@ let playerNextMoveNumber = 0;
 let gatePosX = 0;
 let gatePosY = 0;
 let currentMap = [];
-let i = 0;

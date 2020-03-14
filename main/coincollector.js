@@ -22,7 +22,6 @@ function coinCollectorSetup() {
     gameRunner = true;
     currentGame = "coinCollector";
     coinOnGround = false;
-    i = 0;
     //
     document.write("loading...");
     coinGenerator();
@@ -41,19 +40,19 @@ function coinCollectorGameLoop() {
     if (gameRunner == true && inGame == true && currentGame == "coinCollector") {
         coinGenerator();
         playerMove();
-        enemyMove();
-        coinCollectorMapDraw();       
+        coinCollectorMapDraw();
+        enemyMove();       
         //
         coinCollectorGameRunner();
     }
-    if (gameRunner == false && inGame == true && currentGame == "coinCollector") {
-        for (i; i <= 0; i++) {
-            document.write("GAME OVER<br>");
-            document.write("hit space to restart");
-        }
-        if (event.key == " ") {
-            coinCollectorSetup();
-        }
+}
+//
+function gameEndLoop() {
+    gameRunner = false;
+    coinCollectorMapDraw();
+    document.write("press space to restart");
+    if (event.key == " ") {
+        coinCollectorSetup();
     }
 }
 //
@@ -85,32 +84,41 @@ function enemyMove() {
  function coinCollectorPlayerUp() {
         if (playerPosY != 1) {
             playerPosY--;
+            keyPressed = true;
             playerHasMoved = true;
         }
     }
  function coinCollectorPlayerDown() {
         if (playerPosY != height) {
             playerPosY++;
+            keyPressed = true;
             playerHasMoved = true;
         }
     }
  function coinCollectorPlayerLeft() {
         if (playerPosX != 1) {
             playerPosX--;
+            keyPressed = true;
             playerHasMoved = true;
         }
     }
  function coinCollectorPlayerRight() {
         if (playerPosX != length) {
             playerPosX++;
+            keyPressed = true;
             playerHasMoved = true;
         }
     }
 //   
 function playerMove() {
+    /*
      if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
-         gameRunner = false;
+            coinCollectorMapDraw();
+            document.write("GAME OVER<br>");
+            document.write("hit space to restart");
+            gameEndLoop();
     }
+    */
     if (playerPosX == coinPosX && playerPosY == coinPosY) {
         collectedCoins++;
         coinOnGround = false;
