@@ -178,6 +178,7 @@ function updateChecker() {
     if (playerPosX == coinPosX && playerPosY == coinPosY) {
         collectedCoins++;
         coinOnGround = false;
+        coinGenerator();
         coinCollectorMapDraw();
     }
 }
