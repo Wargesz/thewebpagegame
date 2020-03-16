@@ -42,7 +42,8 @@ function coinCollectorGameLoop() {
         coinGenerator();
         playerMove();
         enemyMove();
-        coinCollectorMapDraw();       
+        coinCollectorMapDraw();
+        updateChecker();     
         //
         coinCollectorGameRunner();
     }
@@ -108,14 +109,6 @@ function enemyMove() {
     }
 //   
 function playerMove() {
-     if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
-         gameRunner = false;
-    }
-    if (playerPosX == coinPosX && playerPosY == coinPosY) {
-        collectedCoins++;
-        coinOnGround = false;
-        coinCollectorMapDraw();
-    }
                 if (event.key == "w" || event.key == "ArrowUp") {
                     coinCollectorPlayerUp();
                 }
@@ -175,6 +168,17 @@ function coinGenerator() {
             coinGenerator();
         }
         coinOnGround = true;
+    }
+}
+//
+function updateChecker() {
+    if (playerPosX == enemyPosX && playerPosY == enemyPosY) {
+        gameRunner = false;
+    }
+    if (playerPosX == coinPosX && playerPosY == coinPosY) {
+        collectedCoins++;
+        coinOnGround = false;
+        coinCollectorMapDraw();
     }
 }
 //

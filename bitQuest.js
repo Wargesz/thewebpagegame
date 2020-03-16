@@ -92,7 +92,6 @@ function bitQuestMapDraw() {
         document.write("<br>");
     }
     document.write("hit space to restart<br>");
-    document.write("hit esc to quit");
 }
 //
 function bitQuestPlayerUp() {
