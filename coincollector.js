@@ -9,7 +9,7 @@ function coinCollectorSetup() {
     length = 20;
     enemyPosX = height;
     enemyPosY = length;
-    highscore = 66;
+    highscore = 160;
     player = '0';
     enemy = 'x';
     space = '_';
