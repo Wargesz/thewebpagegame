@@ -9,7 +9,7 @@ function coinCollectorSetup() {
     length = 20;
     enemyPosX = height;
     enemyPosY = length;
-    highscore = 160;
+    highscore = 363;
     player = '0';
     enemy = 'x';
     space = '_';
@@ -23,11 +23,12 @@ function coinCollectorSetup() {
     currentGame = "coinCollector";
     coinOnGround = false;
     i = 0;
+    mapTileCounter = 0;
     //
-    document.write("loading...");
     coinGenerator();
     coinCollectorMapDraw();
     coinCollectorGameRunner();
+    
     
 }
 //
@@ -43,7 +44,7 @@ function coinCollectorGameLoop() {
         playerMove();
         enemyMove();
         coinCollectorMapDraw();
-        updateChecker();     
+        updateChecker();  
         //
         coinCollectorGameRunner();
     }
@@ -125,35 +126,40 @@ function playerMove() {
 //
 function coinCollectorMapDraw() {
     if (collectedCoins > highscore) {
+        mapTileCounter = 0;
         highscore = collectedCoins;
     }
-    document.body.innerHTML = ' ';
-    document.write("player x: " + playerPosX + ", y: " + playerPosY + "<br>");
-    document.write("enemy x: " + enemyPosX + ", y: " + enemyPosY + "<br>");
-    document.write("-----<br>");
-    document.write("coins: " + collectedCoins + "<br>");
-    document.write("highscore: " + highscore + "<br>");
-    document.write("-----<br>");
+
         for (let y = 1; y <= height; y++) {
             for (let x = 1; x <= length; x++) {
                 if (x == enemyPosX && y == enemyPosY) {
-                    document.write('<img src="images/enemy.png">');
-                    document.write(' ');
+                    //document.write('<img src="images/enemy.png">');
+                    //document.write(' ');
+                    coinCollectorMap[mapTileCounter] = enemy;
+                    mapTileCounter++;
                 }
                 else if (x == playerPosX && y == playerPosY) {
-                    document.write('<img src="images/player.png">');
-                     document.write(' ');
+                    //document.write('<img src="images/player.png">');
+                    //document.write(' ');
+                    coinCollectorMap[mapTileCounter] = player;
+                    mapTileCounter++;
                 }
                 else if (x == coinPosX && y == coinPosY && coinOnGround == true) {
-                        document.write('<img src="images/coin.png">');
-                        document.write(' ');
+                    //document.write('<img src="images/coin.png">');                    
+                    //document.write(' ');
+                    coinCollectorMap[mapTileCounter] = coin;
+                    mapTileCounter++;
                 }
                 
-                else document.write('<img src="images/space.png">');
-                document.write(' ');
+                else
+                    //document.write('<img src="images/space.png">');
+                    //document.write(' ');
+                    coinCollectorMap[mapTileCounter] = space;
+                    mapTileCounter++;
             }
-            document.write("<br>");
+            //document.write("<br>");
     }
+    document.getElementById('map') = coinCollectorMap;
 }
 //
 function coinGenerator() {

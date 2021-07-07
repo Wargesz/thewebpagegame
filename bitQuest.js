@@ -88,6 +88,11 @@ function bitQuestMapDraw() {
                 document.write(" ");
                 mapTileCounter++;
             }
+            else if (currentMap[mapTileCounter] == 3) {
+                document.write('<img src="images/enemy.png">');
+                document.write(" ");
+                mapTileCounter++;
+            }
         }
         document.write("<br>");
     }

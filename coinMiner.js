@@ -1,18 +1,21 @@
 console.log("coinMiner: Ready");
 //
 function coinMinerSetup() {
-    coinMinerGameRunner();
+    collectedCoins = 0;
+    inGame = true;
+    gameRunner = true;
+    currentGame = "coinMiner";
+    //
+    coinMinerGenerator();
 }
 //
-function coinMinerGameRunner() {
-    document.onkeydown = function (event) {
-        coinMinerGameLoop();
-    };
+function coinMinerGenerator() {
+    mainDiv = document.getElementById('main');
+    element = document.createElement('BUTTON');
+    element.setAttribute("onClick","coinMinerClearer()");
+    element.innerText = "xd";
+    mainDiv.appendChild(element);
 }
-//
-function coinMinerGameLoop() {
-    if (gameRunner == true && inGame == true && currentGame == "coinMiner") {
-        //
-        coinMinerGameRunner();
-    }
+function coinMinerClearer() {
+    document.getElementById('index')
 }

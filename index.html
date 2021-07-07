@@ -1,20 +1,58 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>thewebpagegame</title>
-    <meta charset="UTF-8">
-    <script src="main.js"></script>
-    <script src="coincollector.js"></script>
-    <script src="bitQuest.js"></script>
-    <script src="coinMiner.js"></script>
+	<title>thewebpagegame</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		canvas {
+			display: block;
+		}
+	</style>
+	
 </head>
 <body>
+    <div id="index">
     Select game:
     <br>
     <input id="clickMe" type="button" value="coinCollector" onclick="coinCollectorSetup();" />
     <br>
     <input id="clickMe" type="button" value="bitQuest" onclick="bitQuestSetup();" />
     <br>
-    <input id="clickMe" type="button" value="coming soon"/>
+    <input id="clickMe" type="button" value="coinMiner" onclick="coinMinerSetup();" />
+    </div>
+    <div id="map">
+    </div>
+    <div id="main">
+    </div>
+    <br>
+        <table id="table" style="width: auto">
+            <tr>
+                <td colspan="3" id="coins"></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" id="highscore"></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" id="map"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><input id="clickMe" type="button" value="<" onclick="coinCollectorPlayerLeft()" /></td>
+                <td><input id="clickMe" type="button" value="/\" onclick="coinCollectorPlayerUp()" /></td>
+                <td rowspan="2"><input id="clickMe" type="button" value=">" onclick="coinCollectorPlayerRight()" /></td>
+            </tr>
+            <tr>
+                <td><input id="clickMe" type="button" value="\/" onclick="coinCollectorPlayerDown()" /></td>
+            </tr>
+        </table>
+    <script src="main.js"></script>
+    <script src="coincollector.js"></script>
+    <script src="bitQuest.js"></script>
+    <script src="coinMiner.js"></script>
 </body>
 </html>

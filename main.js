@@ -1,11 +1,13 @@
 console.log("main: Ready");
 // main.js variables
+let buttons;
 let inGame = false;
 let currentGame = "none";
 let gameRunner = true;
 // variables
 let x = 1;
 let y = 1;
+let i = 0;
 let playerPosX = 1;
 let playerPosY = 1;
 let coinPosX = 0;
@@ -14,7 +16,7 @@ let height = 20;
 let length = 20;
 let enemyPosX = height;
 let enemyPosY = length;
-let highscore = 66;
+let highscore = 0;
 let collectedCoins = 0;
 let keyPressed = false;
 let enemyMovementNumber = null;
@@ -37,7 +39,7 @@ let map11= [        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                     1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
                     1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
                     1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-                    1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
+                    1, 0, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
                     1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
                     1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
                     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -63,11 +65,23 @@ let map12 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 ];
+let currentMap = [];
+let convertedMap = [];
 let mapTileCounter = 1;
 let playerLocator = 0;
 let playerPosNumber = 0;
 let playerNextMoveNumber = 0;
 let gatePosX = 0;
 let gatePosY = 0;
-let currentMap = [];
-let i = 0;
+let element;
+let mainDiv;
+//
+function hideButton() {
+    buttons = document.getElementById("table");
+    buttons.style.display = "none";
+}
+hideButton();
+function showButton() {
+    buttons.style.display = "block";
+}
+//
